@@ -75,17 +75,13 @@ window.onload = () =>{
 };
 
 // Prevent event propagation
-const buttons = document.querySelectorAll(".btn");
-buttons.forEach( element => {
-  element.addEventListener( "click", (event) => {
-    event.stopPropagation();
-    element.style.backgroundColor = "maroon";
-    element.style.color = "gold";
-  });
+document.querySelector(".btn").addEventListener("click", function(event){
+  event.currentTarget.innerText = "You clicked the 1st button!";
+  event.stopPropagation();
 });
 
 // Stop nav items from refreshing page
 const prevent = document.querySelector(".main-navigation");
 prevent.addEventListener("click", (event) => {
-  event.preventDefault();
+event.preventDefault();
 });
