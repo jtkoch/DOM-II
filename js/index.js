@@ -1,33 +1,28 @@
 // Your code goes here
 
-// Event 1 - Makes the bus image change sizes when moused over and back to normal after
+// Event 1 - Makes the bus image change sizes when moused over
 const busImg = document.querySelector(".busTop");
 busImg.addEventListener("mouseenter", () => {
   busImg.style.transform = "scale(0.5)";
   busImg.style.transition = "all 1s";
 });
 
+// Event 2 - Makes bus image go back to original size when the cursor leaves the image
 busImg.addEventListener("mouseleave", () => {
   busImg.style.transform = "scale(1)";
   busImg.style.transition = "all 1s";
 });
 
-// Event 2 - Changes "Fun Bus" color to purple when clicked
+// Event 3 - Changes "Fun Bus" color to purple when clicked
 const logoChange = document.querySelector(".logo-heading");
 logoChange.addEventListener("click", () => {
   logoChange.style.color = "purple";
 });
 
-// Event 3 - Changes the image when the page is resized
+// Event 4 - Changes the image when the page is resized
 const adventureImg = document.querySelector(".adventure");
 window.addEventListener("resize", () => {
   adventureImg.src = "img/fun-bus.jpg";
-});
-
-// Event 4 - Changes the background color of the nav section to pink when clicked
-const navBlur = document.querySelector(".main-navigation");
-navBlur.addEventListener("click", (event) => {
-  navBlur.style.background = "pink";
 });
 
 // Event 5 - Changes all of the images on the page to get bigger when clicked and back to normal when double clicked
@@ -55,24 +50,24 @@ const textColor = document.querySelectorAll("p").forEach(allTxt => {
   });
 });
 
-// Event 8 - Changes background color of page with a double click
-const backgroundChange = document.querySelector("body");
-backgroundChange.addEventListener("dblclick", () => {
-  backgroundChange.style.backgroundColor = "dodgerblue";
-});
-
-// Event 9 - Makes an alert pop up when you try and copy the paragraph text
+// Event 8 - Makes an alert pop up when you try and copy the paragraph text
 const cutAndCopy = document.querySelector("p");
-cutAndCopy.addEventListener('copy', (event) => {
+cutAndCopy.addEventListener("copy", (event) => {
   window.alert("Please do not copy that text!");
 })
 
-// Event 10 - An alert pops up after being on the page for so long
+// Event 9 - An alert pops up after being on the page for so long
 window.onload = () =>{
   setTimeout(() =>{
-      alert("Welcome to FunBus, Enjoy your stay!");
+    alert("Welcome to FunBus!");
   }, 3000); 
 };
+
+// Event 10 - Changes the backround color when you sroll down the page
+const body = document.querySelector("body");
+  window.addEventListener("scroll", () => {
+    body.style.backgroundColor = "skyblue";
+});
 
 // Prevent event propagation
 document.querySelector(".btn").addEventListener("click", function(event){
@@ -83,5 +78,5 @@ document.querySelector(".btn").addEventListener("click", function(event){
 // Stop nav items from refreshing page
 const prevent = document.querySelector(".main-navigation");
 prevent.addEventListener("click", (event) => {
-event.preventDefault();
+  event.preventDefault();
 });
